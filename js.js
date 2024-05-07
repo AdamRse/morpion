@@ -1,7 +1,7 @@
 //PARAMETRES
-let nbLineVictory = 3;
-let gridNbX = 3;
-let gridNbY = 3;
+let nbLineVictory = 4;
+let gridNbX = 20;
+let gridNbY = 15;
 
 //INIT
 let grid = document.querySelector("#grid");
@@ -98,8 +98,9 @@ function clickOnTile(){
     if(!win && tiles[this.dataset.y][this.dataset.x] == undefined){
         this.innerHTML = turn;
         this.style.backgroundImage = "url('"+turn+".png')";
-        this.backgroundPosition = "cover";
-        this.backgroundRepeat = "no-repeat";
+        this.style.backgroundPosition = "center";
+        this.style.backgroundSize = "cover";
+        this.style.backgroundRepeat = "no-repeat";
         tiles[this.dataset.y][this.dataset.x] = turn;
         testWinConditionFromLastElem(this);
     }
