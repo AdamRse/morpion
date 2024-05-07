@@ -1,0 +1,29 @@
+#start{
+    padding: 10px 50px;
+    margin: 50px;
+    width: 300px;
+    margin: 0 auto;
+}
+#grid{
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    font-size: 0;
+    background-color: #333;
+    margin: 0 auto;
+}
+#grid .tile{
+    display: inline-block;
+    font-size: 150px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+}
+
+#grid .tile.light{
+    background-color: #bbb;
+}
+#grid .tile.dark{
+    background-color: #888;
+}
