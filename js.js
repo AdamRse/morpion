@@ -1,7 +1,7 @@
 //PARAMETRES
 let nbLineVictory = 4;
-let gridNbX = 20;
-let gridNbY = 15;
+let gridNbX = 10;
+let gridNbY = 10;
 
 //INIT
 let grid = document.querySelector("#grid");
@@ -62,8 +62,9 @@ function testWinConditionFromLastElem(lastElem){
             //TextDiagX
             if(!win){
                 streak = 0;
-                for(let i = posX-nbVictory; i<=posX+nbVictory; i++){
-                    if(tiles[i] && tiles[i][i] === turn){
+                for(let i = -nbVictory; i<=nbVictory; i++){
+                    let testPy = i+posY;
+                    if(tiles[testPy] && tiles[testPy][posX+i] === turn){
                         if(++streak >= nbLineVictory)
                             win=true;
                     }
@@ -74,9 +75,9 @@ function testWinConditionFromLastElem(lastElem){
                 //TextDiagY DE L'ENFER DE SES MORTS
                 if(!win){
                     streak = 0;
-                    for(let i = posY-nbVictory; i<=posY+nbVictory; i++){
-                        let calcX = posX+nbVictory-(posX+i);
-                        if(tiles[i] && tiles[i][calcX] === turn){
+                    for(let i = 0; i<nbLineVictory*2; i++){
+                        let testPy = i+posY-nbVictory;
+                        if(tiles[testPy] && tiles[testPy][posX-i+nbVictory] === turn){
                             if(++streak >= nbLineVictory)
                                 win=true;
                         }
