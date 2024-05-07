@@ -75,7 +75,8 @@ function testWinConditionFromLastElem(lastElem){
                 //TextDiagY DE L'ENFER DE SES MORTS
                 if(!win){
                     streak = 0;
-                    for(let i = 0; i<nbLineVictory*2; i++){
+                    for(let i = 0; i<nbLineVictory*2; 
+                        i++){
                         let testPy = i+posY-nbVictory;
                         if(tiles[testPy] && tiles[testPy][posX-i+nbVictory] === turn){
                             if(++streak >= nbLineVictory)
